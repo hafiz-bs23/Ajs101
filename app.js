@@ -1,11 +1,23 @@
 (function (){
     'use strict'
-    angular.module('myFirstApp', [])
-    .controller('myFirstController', function($scope){
-        $scope.name = "Ulala"
+    angular.module('nameCalculator', [])
+    .controller('nameCalculatorController', function($scope){
+        $scope.name = "Your Name"
+        $scope.sumNumName = 0;
         $scope.grettings = function(){
-            return "Hy look like you are in the right place. We may have fun!! Lets' Go.!!"
+            return "Write down your name here. We are very good at Calculating it."
         };
+        $scope.calculateName = function(){
+            var totaoValue = 0;
+            totaoValue = calculateNumaricOfString($scope.name);
+            $scope.sumNumName = totaoValue;
+        };
+        function calculateNumaricOfString(string){
+            var totalStringValue = 0;
+            for (var i=0; i<string.length; i++){
+                totalStringValue = totalStringValue + string.charCodeAt(i);
+            }
+            return totalStringValue;
+        }
     });
-
 })();

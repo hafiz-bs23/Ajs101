@@ -1,16 +1,17 @@
-<html ng-app ='myFirstApp'>
+<html ng-app ='nameCalculator'>
     <head>
         <meta charset="utf-8">
         <script src="angular.min.js"></script>
         <script src="app.js"></script>
-        <title>This is going to be fun!!! Let's Check it out</title>
+        <title>Calculate my NAme</title>
     </head>
     <body>
-        <div ng-controller="myFirstController">
-            <h1>{{name}}</h1>
+        <div ng-controller="nameCalculatorController">
+            <h1>Name Calculator for Everyone</h1>
+            <h2>Hy.You are: {{name}}</h2>
             <p>{{grettings()}}</p>
-            <input type="text" ng-model="name" placeholder="You can write you name here also">
-            <p>You wrote: {{name}}</p>
+            <input type="text" ng-model="name"  ng-keyup="calculateName();" placeholder="Write Here..">
+            <p>You wrote: {{name}}. The total nemaric value of the name is: {{sumNumName}}</p>
         </div>
     </body>
 </html>
