@@ -1,16 +1,21 @@
-<html ng-app ='myFirstApp'>
+<html ng-app ='angularApp'>
     <head>
         <meta charset="utf-8">
         <script src="angular.min.js"></script>
         <script src="app.js"></script>
-        <title>This is going to be fun!!! Let's Check it out</title>
+        <title>Custom Filters</title>
     </head>
     <body>
-        <div ng-controller="myFirstController">
-            <h1>{{name}}</h1>
-            <p>{{grettings()}}</p>
-            <input type="text" ng-model="name" placeholder="You can write you name here also">
-            <p>You wrote: {{name}}</p>
+        <div style="text-align: center;" ng-controller="ctrl">
+            <h1 style="color: rgb(113, 67, 219);">Custom Filters</h1>
+            <h2>Tell us about yourselves:</h2><br>
+            <p>What is your first name?</p>
+            <input type="text" ng-model="firstName">
+            <p>What is your last name?</p>
+            <input type="text" ng-model="lastName">
+            <h3>You are: <span style="color: brown;">{{firstName}} {{lastName}}</span></h3>
+            <h3>In Reverse: <span style="color: rgb(228, 13, 13);">{{firstName | revr | uppercase | cntr:'do' }} {{lastName | revr | lowercase | cntr: 'do not'}}</span></h3>
+            <h3>We Call you <span style="color: rgb(19, 156, 53);">{{firstName | revr | uppercase | cntr:'do' }}{{lastName | lowercase}}</span></h3>
         </div>
     </body>
 </html>
