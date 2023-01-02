@@ -1,4 +1,4 @@
-<html ng-app ='myFirstApp'>
+<html ng-app ='shoppingList'>
     <head>
         <meta charset="utf-8">
         <script src="angular.min.js"></script>
@@ -6,11 +6,23 @@
         <title>This is going to be fun!!! Let's Check it out</title>
     </head>
     <body>
-        <div ng-controller="myFirstController">
-            <h1>{{name}}</h1>
-            <p>{{grettings()}}</p>
-            <input type="text" ng-model="name" placeholder="You can write you name here also">
-            <p>You wrote: {{name}}</p>
+        <div ng-controller="shoppingListController">
+            <h1>Traditional Shopping List</h1>
+            <ul>
+                <li ng-repeat="item in traditionalList">
+                    You need to buy {{ item.name}} and for that, you need to spent {{ item.price}}
+                </li>
+            </ul>
+            <h1>Monthly shopping list, But Dynamic</h1>
+            <h2>Search here:<input type="text" ng-model="searchText"></h2>
+            <ul>
+                <li ng-repeat="item in monthlyList | filter: searchText">
+                    You need to buy {{ item.name}} and for that, you need to spent {{ item.price}}
+                </li>
+            </ul>
+            <input type="text" ng-model="itemName">
+            <input type="text" ng-model="itemPrice">
+            <button ng-click="adItemToMonthlyList()"> Add to List</button>
         </div>
     </body>
 </html>
