@@ -1,4 +1,4 @@
-<html ng-app ='myFirstApp'>
+<html ng-app ='timer'>
     <head>
         <meta charset="utf-8">
         <script src="angular.min.js"></script>
@@ -6,11 +6,8 @@
         <title>This is going to be fun!!! Let's Check it out</title>
     </head>
     <body>
-        <div ng-controller="myFirstController">
-            <h1>{{name}}</h1>
-            <p>{{grettings()}}</p>
-            <input type="text" ng-model="name" placeholder="You can write you name here also">
-            <p>You wrote: {{name}}</p>
+        <div ng-controller="TimerController">
+            <h1>Seconds passed: {{seccounter}}</h1>
         </div>
     </body>
 </html>
